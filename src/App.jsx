@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { Post } from "./Post";
 
 function App() {
-  const [value, setValue] = useState(1);
+  const [page, setPage] = useState(1);
 
-  const addValue = () => {
-    setValue(value + 1);
+  const addPage = () => {
+    setPage(page + 1);
   };
 
   return (
     <div className="App">
-      <div>Value: {value}</div>
-      <button onClick={addValue}>Add value</button>
+      <div>Page: {page}</div>
+      <button onClick={addPage}>Add value</button>
+      <hr />
+      <Post page={page} />
     </div>
   );
 }
